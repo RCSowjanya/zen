@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*---global styles----*/
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: "Rajdhani", sans-serif;
+  text-decoration: none;
+}
+
+li a {
+  font-size: 1rem;
+  color: #000000;
+  margin-right: 1rem;
+}
+li a:hover {
+  color: #ff681e;
+}
+.slick-prev:before {
+  font-size: 80px;
+}
+.star {
+  animation: rotation 18s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.plus {
+  animation: pulse 1s infinite alternate ease-in-out;
+}
+.plus:hover {
+  animation: wave 1s infinite cubic-bezier(0, 0, 0, 0);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes wave {
+  to {
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0);
+  }
+}
+.underline {
+  text-decoration: none;
+  position: relative;
+}
+.underline:after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: -8px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 5%;
+  background: #0094bc;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.underline:hover:after {
+  width: 20%;
+  background: #ff661e;
+}
+.count {
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+.count:hover {
+  transform: translateY(-30px);
+}
+/*---solutions button css----*/
+.solution .slick-next {
+  right: 45%;
+}
+@media screen and (max-width: 1000px) {
+  .solution .slick-next {
+    right: 40%;
+  }
+}
+.solution .slick-prev {
+  left: 45% !important;
+  z-index: 999 !important;
+  margin-left: 5px;
+}
+@media screen and (max-width: 600px) {
+  .solution .slick-prev {
+    left: 35% !important;
+  }
+}
+.solution .slick-next,
+.solution .slick-prev {
+  top: 68% !important;
+}
+@media screen and (max-width: 600px) {
+  .solution .slick-next,
+  .solution .slick-prev {
+    top: 60% !important;
+  }
+}
+.solution button.slick-arrow.slick-prev,
+.solution button.slick-arrow.slick-next {
+  bottom: -10% !important;
+}
+/*---solutions button css-close---*/
+/*---testmonials button css----*/
+.testmonials button.slick-arrow.slick-prev {
+  left: unset !important;
+  right: 16% !important;
+}
+@media screen and (max-width: 600px) {
+  .testmonials button.slick-arrow.slick-prev {
+    right: 25% !important;
+  }
+}
+.testmonials button.slick-arrow.slick-next {
+  right: 12% !important;
+}
+.testmonials button.slick-arrow.slick-next,
+.testmonials button.slick-arrow.slick-prev {
+  top: -10% !important;
+}
+ul.slick-dots li {
+  display: inline-block;
+  margin: 0 5px; /* Adjust spacing between dots if needed */
+}
+
+ul.slick-dots li button {
+  background-color: #0094bc;
+  display: inline-flex;
+  height: 8px;
+  width: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  outline: none; /* Remove the outline */
+  cursor: pointer;
+}
+ul.slick-dots li.slick-active button {
+  border: 1px solid #0094bc;
+  color: #0094bc !important;
+}
+
+/*---testmonials button css-close---*/
+.slick-prev:before,
+.slick-next:before {
+  font-size: 25px !important;
+}
+.move {
+  animation: moving 3s linear infinite;
+}
+@keyframes moving {
+  0% {
+    transform: translateX(3%);
+  }
+  100% {
+    transform: translateX(-3%);
+  }
+}
+.slick-prev:before,
+.slick-next:before {
+  background: #0094bc !important;
+  padding: 4px;
+}
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-move-up-down {
+  animation: moveUpDown 2s infinite;
+}
+@media (max-width: 600px) {
+  [data-aos] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
